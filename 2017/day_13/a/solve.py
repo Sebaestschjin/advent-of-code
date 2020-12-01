@@ -1,0 +1,61 @@
+class Scanner:
+	def __init__(self, depth):
+		self.depth = depth
+		self.direction = 1
+		self.position = 0
+
+	def __repr__(self):
+		res = ''
+		if self.depth == 0:
+			return '...'
+		for i in range(self.depth):
+			res += '[' + ('S' if self.position == i else ' ') + ']'
+		return res
+
+	def move(self):
+		if (self.position == 0 and self.direction < 0) or (self.position + 1 == self.depth and self.direction > 0):	
+			self.direction *= -1
+		self.position += self.direction
+
+
+class Firewall:
+
+	def __init__(self, infile):
+		self.packet = -1
+		self.second = 0
+		self.scanners = []
+		self.severity = 0
+		for l in infile.read().splitlines():
+			pos, depth = l.split(': ')
+			for i in range(int(pos) - len(self.scanners)):
+				self.scanners += [Scanner(0)]
+			self.scanners += [Scanner(int(depth))]
+
+	def __repr__(self):
+		res = '@' + str(self.packet) + ' (' + str(self.severity) + ')\n'
+		for scanner, pos in zip(self.scanners, range(len(self.scanners))):
+			res += '(P)' if pos == self.packet else '   '
+			res += str(scanner) + '\n'
+		return res;
+
+	def simulate(self):
+		for i in range(len(self.scanners)):
+			self.packet += 1
+			if self.scanners[i].position == 0:
+				self.severity += i * self.scanners[i].depth
+			for scanner in self.scanners:
+				scanner.move()
+
+	def get_severity(self):
+		return self.severity
+
+
+def run(input):
+	with open(input) as inputfile:
+		firewall = Firewall(inputfile)
+
+	firewall.simulate()
+	return firewall.get_severity()
+
+if __name__ == '__main__':
+	print(run("in"))

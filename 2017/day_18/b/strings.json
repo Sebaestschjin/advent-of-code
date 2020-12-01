@@ -1,0 +1,33 @@
+{
+   "data": {
+      "title_installer": "PRESENT PRINTER 3000 - Installation",
+      "title_snake_1": "PRESENT PRINTER 3000 - Downloading installer update...",
+      "title_snake_2": "PRESENT PRINTER 3000 - Downloading present files...",
+      "title_snake_3": "PRESENT PRINTER 3000 - Installing...",
+      "installer_10": "Welcome to PRESENT PRINTER 3000! Thank you for choosing our product.\n\nThis installer will guide you through the setup routine. At the end of the routine you will be able to print a perfectly matching birthday present at a printing station near you!\n\nPress 'N' to continue.",
+      "installer_20": "A newer version was found. The installer will update itself automatically.\n\nMeanwhile please enjoy a classic game of snake. You can control the snake with the arrow keys or with the WASD keys.\n\nPress 'N' to continue.",
+      "installer_30": "The installer has been updated successfully! Please select the present categories you would like to receive using 'SPACE'. Your final present will be chosen from one of those categories.",
+      "installer_35": "Additional files need to be downloaded for the selected present categories. Please enjoy another game of snake while you are waiting!\n\nPress 'N' to continue.",
+      "installer_40": "The present categories have been downloaded successfully.\n\nThe installer will now install the application. This might take a while. Please enjoy a final round of your favorite game during the installation process.\n\nPress 'N' to continue.",
+      "installer_50": "Congratulations! The installation was successful. Now enjoy our product and find your perfect birthday present.\n\nPress 'N' to continue.",
+      "programm_10": "Programm error! Selfcheck required.\n\nPress 'N' to continue.",
+      "programm_20": "Welcome to PRESENT PRINTER 3000! Thank you for choosing our product.\n\nOn the next screen you can choose your present. Afterwards the present will be printed at a present printer near you where you can finally pick it up.",
+      "options": "Geek Stuff;Clothes;Sex Toys;Animals (includes Cats, Dogs, etc. but no Turtles!);Food (now includes Cheetos!);Toy Trains",
+      "solution_name": "Langer, Heiner",
+      "solution_age": "31",
+      "solution_location": "92",
+      "solution_present": "1423634",
+      "solution_printer": "7493",
+      "text_name": "Identify user",
+      "text_age": "Check age restriction",
+      "text_location": "Find nearest available location",
+      "text_present": "Identify suitable present",
+      "text_printer": "Check printer access",
+      "check_error": "Not all checks could be verified. Your installation may be corrupt. Read the 'TROUBLESHOOTING.md' file in your installation path for more information.",
+      "check_success": "All checks complete. Programm can run.",
+      "gift_from": "Stefan, Sarah, Basti, ",
+      "disk2_start_error_1": "Program received signal SIGSEGV, Segmentation fault.",
+      "disk2_start_error_2": "Starting selfcheck ...",
+      "title_selfcheck": "A problem has been detected. Performing self check..."
+   }
+}
