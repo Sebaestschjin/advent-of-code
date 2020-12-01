@@ -1,18 +1,16 @@
 def solve_a(puzzle):
-    size = len(puzzle)
-    for i in range(size):
-        for j in range(size):
-            if i != j and puzzle[i] + puzzle[j] == 2020:
-                return puzzle[i] * puzzle[j]
+    for i in puzzle:
+        for j in puzzle:
+            if i + j == 2020:
+                return i * j
 
 
 def solve_b(puzzle):
-    size = len(puzzle)
-    for i in range(size):
-        for j in range(size):
-            for k in range(size):
-                if i != j and j != k and i != k and puzzle[i] + puzzle[j] + puzzle[k] == 2020:
-                    return puzzle[i] * puzzle[j] * puzzle[k]
+    for i in puzzle:
+        for j in puzzle:
+            for k in puzzle:
+                if i + j + k == 2020:
+                    return i * j * k
 
 
 def read():
