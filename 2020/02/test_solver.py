@@ -1,16 +1,28 @@
-from unittest import TestCase
+import unittest
 from assertpy import assert_that
 
 import solver
 
 
-class Test(TestCase):
-    def test_solve_a(self):
-        puzzle = [1721, 979, 366, 299, 675, 1456]
+class Test(unittest.TestCase):
+    def test_example_a(self):
+        puzzle = [('a', 1, 3, 'abcde'), ('b', 1, 3, 'cdefg'), ('c', 2, 9, 'ccccccccc')]
         result = solver.solve_a(puzzle)
-        assert_that(result).is_equal_to(514579)
+        assert_that(result).is_equal_to(2)
 
-    def test_solve_b(self):
-        puzzle = [1721, 979, 366, 299, 675, 1456]
+    def test_solution_a(self):
+        result = solver.solve_a(solver.read())
+        assert_that(result).is_equal_to(416)
+
+    def test_example_b(self):
+        puzzle = [('a', 1, 3, 'abcde'), ('b', 1, 3, 'cdefg'), ('c', 2, 9, 'ccccccccc')]
         result = solver.solve_b(puzzle)
-        assert_that(result).is_equal_to(241861950)
+        assert_that(result).is_equal_to(1)
+
+    def test_solution_b(self):
+        result = solver.solve_b(solver.read())
+        assert_that(result).is_equal_to(688)
+
+
+if __name__ == '__main__':
+    unittest.main()
