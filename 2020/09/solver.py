@@ -1,6 +1,4 @@
 def is_valid(number, part):
-    # print(number)
-    # print(part)
     for i in range(len(part)):
         for j in range(len(part)):
             if i != j and part[i] + part[j] == number:
