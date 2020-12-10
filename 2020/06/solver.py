@@ -1,5 +1,8 @@
 from collections import defaultdict
 
+import reader
+
+
 def get_answers_a(group):
     answers = {}
     for person in group:
@@ -24,30 +27,11 @@ def solve_b(groups):
     return sum([get_answers_b(group) for group in groups])
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        groups = []
-        group = []
-
-        for line in file.readlines():
-            if not line.strip():
-                groups.append(group)
-                group = []
-            else:
-                group.append(line.strip())
-
-        groups.append(group)
-        return groups
-
-
 def run():
-    puzzle = read()
+    groups = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(groups))
+    print(solve_b(groups))
 
 
 if __name__ == '__main__':

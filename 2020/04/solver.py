@@ -1,5 +1,7 @@
 import re
 
+import reader
+
 VALIDATORS = {
     'byr': lambda v: 1920 <= int(v) <= 2002,
     'iyr': lambda v: 2010 <= int(v) <= 2020,
@@ -21,45 +23,26 @@ def is_valid_b(passport):
         try:
             if not v(passport[n]):
                 return False
-        except:
+        except KeyError:
             return False
     return True
 
 
-def solve_a(puzzle):
-    valids = [p for p in puzzle if is_valid_a(p)]
-    return len(valids)
+def solve_a(passports):
+    valid_passports = [p for p in passports if is_valid_a(p)]
+    return len(valid_passports)
 
 
-def solve_b(puzzle):
-    valids = [p for p in puzzle if is_valid_b(p)]
-    return len(valids)
-
-
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        passports = []
-        passport = {}
-        for line in file.readlines():
-            if not line.strip():
-                passports.append(passport)
-                passport = {}
-            for value in [v for v in line.strip().split(' ') if v]:
-                n, v = value.split(':')
-                passport[n] = v
-
-        passports.append(passport)
-        return passports
+def solve_b(passports):
+    valid_passports = [p for p in passports if is_valid_b(p)]
+    return len(valid_passports)
 
 
 def run():
-    puzzle = read()
+    passports = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(passports))
+    print(solve_b(passports))
 
 
 if __name__ == '__main__':

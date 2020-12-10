@@ -1,3 +1,6 @@
+import reader
+
+
 def solve_a(puzzle):
     for i in puzzle:
         for j in puzzle:
@@ -13,19 +16,11 @@ def solve_b(puzzle):
                     return i * j * k
 
 
-def read():
-    with open('in', 'r') as file:
-        return [int(line) for line in file.readlines()]
-
-
 def run():
-    puzzle = read()
+    puzzle = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(puzzle))
+    print(solve_b(puzzle))
 
 
 if __name__ == '__main__':

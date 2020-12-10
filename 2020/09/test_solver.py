@@ -1,6 +1,7 @@
 import unittest
 from assertpy import assert_that
 
+import reader
 import solver
 
 
@@ -13,7 +14,7 @@ class Test(unittest.TestCase):
 
     def test_solution_a(self):
         preamble_size = 25
-        result = solver.solve_a(solver.read(), preamble_size)
+        result = solver.solve_a(reader.read(), preamble_size)
         assert_that(result).is_equal_to(530627549)
 
     def test_example_b(self):
@@ -24,7 +25,7 @@ class Test(unittest.TestCase):
 
     def test_solution_b(self):
         preamble_size = 25
-        result = solver.solve_b(solver.read(), preamble_size)
+        result = solver.solve_b(reader.read(), preamble_size)
         assert_that(result).is_equal_to(77730285)
 
 

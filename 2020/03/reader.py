@@ -4,4 +4,4 @@ def read(filename='in'):
 
 
 def read_lines(lines):
-    return [int(line) for line in lines]
+    return [line.strip() for line in lines]

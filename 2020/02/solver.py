@@ -1,48 +1,38 @@
-def is_valid_a(password, letter, min, max):
+import reader
+
+
+def is_valid_a(password, letter, lower, upper):
     count = password.count(letter)
-    return count >= min and count <= max
+    return lower <= count <= upper
 
 
-def solve_a(puzzle):
+def solve_a(rules):
     valid = 0
-    for (letter, min, max, password) in puzzle:
-        if is_valid_a(password, letter, min, max):
+    for (letter, lower, upper, password) in rules:
+        if is_valid_a(password, letter, lower, upper):
             valid += 1
     return valid
 
 
 def is_valid_b(password, letter, first, second):
-    return (password[first-1] == letter and password[second-1] != letter) or (password[first-1] != letter and password[second-1] == letter)
+    first_has_letter = password[first-1] == letter
+    second_has_letter = password[second-1] == letter
+    return first_has_letter ^ second_has_letter
 
 
-def solve_b(puzzle):
+def solve_b(rules):
     valid = 0
-    for (letter, first, second, password) in puzzle:
+    for (letter, first, second, password) in rules:
         if is_valid_b(password, letter, first, second):
             valid += 1
     return valid
 
 
-def read():
-    with open('in', 'r') as file:
-        return [split_line(line) for line in file.readlines()]
-
-
-def split_line(line):
-    policy, password = line.split(': ')
-    times, letter = policy.split(' ')
-    min, max = times.split('-')
-    return (letter, int(min), int(max), password)
-
-
 def run():
-    puzzle = read()
+    rules = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(rules))
+    print(solve_b(rules))
 
 
 if __name__ == '__main__':

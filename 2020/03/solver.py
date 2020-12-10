@@ -1,6 +1,8 @@
 from functools import reduce
 import operator
 
+import reader
+
 
 def is_tree(forest, x, y):
     return forest[y][x] == '#'
@@ -31,19 +33,11 @@ def solve_b(forest):
     return reduce(operator.mul, [check_slope(forest, slope) for slope in slopes])
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        return [line.strip() for line in file.readlines()]
-
-
 def run():
-    puzzle = read()
+    puzzle = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(puzzle))
+    print(solve_b(puzzle))
 
 
 if __name__ == '__main__':

@@ -1,3 +1,6 @@
+import reader
+
+
 class State:
     def __init__(self):
         self.accumulator = 0
@@ -15,7 +18,7 @@ def jump(argument, state):
     state.next += argument
 
 
-def noop(argument, state):
+def noop(_, state):
     state.next += 1
 
 
@@ -63,23 +66,11 @@ def solve_b(program):
                 return result.accumulator
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        program = []
-        for line in file.readlines():
-            operation, argument = line.strip().split(' ')
-            program.append((operation, int(argument)))
-        return program
-
-
 def run():
-    puzzle = read()
+    program = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(program))
+    print(solve_b(program))
 
 
 if __name__ == '__main__':

@@ -1,3 +1,6 @@
+import reader
+
+
 def find_containers(rules, search_bag):
     containers = []
     for bag, rule in rules.items():
@@ -26,30 +29,11 @@ def solve_b(rules):
     return find_contents(rules, 'shiny gold') - 1
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        rules = {}
-        for line in file.readlines():
-            color, rule = line.strip().split(' bags ')
-            contains = rule[8:].split(', ')
-            color_rules = {}
-            for contain in contains:
-                if contain[:2] != 'no':
-                    count = int(contain[:1])
-                    bag = contain[2:].replace(' bags', '').replace(' bag', '').replace('.', '')
-                    color_rules[bag] = count
-            rules[color] = color_rules
-        return rules
-
-
 def run():
-    puzzle = read()
+    rules = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(rules))
+    print(solve_b(rules))
 
 
 if __name__ == '__main__':

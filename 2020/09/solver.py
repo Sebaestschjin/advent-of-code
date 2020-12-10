@@ -1,3 +1,6 @@
+import reader
+
+
 def is_valid(number, part):
     for i in range(len(part)):
         for j in range(len(part)):
@@ -30,19 +33,11 @@ def solve_b(data, preamble_size):
                 break
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        return [int(line) for line in file.readlines()]
-
-
 def run():
-    puzzle = read()
+    puzzle = reader.read()
 
-    solution_a = solve_a(puzzle, 25)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle, 25)
-    print(solution_b)
+    print(solve_a(puzzle, 25))
+    print(solve_b(puzzle, 25))
 
 
 if __name__ == '__main__':

@@ -1,3 +1,6 @@
+import reader
+
+
 def binary_search(down, up, splitter):
     half = (up + down + 1) / 2
     if splitter[0] == 'F' or splitter[0] == 'L':
@@ -36,19 +39,11 @@ def solve_b(boarding_passes):
             return seat_id
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        return [line.strip() for line in file.readlines()]
-
-
 def run():
-    puzzle = read()
+    puzzle = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(puzzle))
+    print(solve_b(puzzle))
 
 
 if __name__ == '__main__':
