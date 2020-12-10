@@ -1,3 +1,6 @@
+import reader
+
+
 def solve_a(puzzle):
     pass
 
@@ -6,19 +9,11 @@ def solve_b(puzzle):
     pass
 
 
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        return file.readlines()
-
-
 def run():
-    puzzle = read()
+    puzzle = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(puzzle))
+    print(solve_b(puzzle))
 
 
 if __name__ == '__main__':

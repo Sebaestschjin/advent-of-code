@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+import reader
 
 def get_all_adapters(adapters):
     adapters.append(0)                  # the outlet
@@ -40,24 +41,15 @@ def get_connection_count(current, adapters, already_calculated):
 
 def solve_b(adapters):
     adapters = get_all_adapters(adapters)
-    possible_paths = {}
 
-    return get_connection_count(0, adapters, possible_paths)
-
-
-def read(filename='in'):
-    with open(filename, 'r') as file:
-        return [int(line) for line in file.readlines()]
+    return get_connection_count(0, adapters, {})
 
 
 def run():
-    puzzle = read()
+    adapters = reader.read()
 
-    solution_a = solve_a(puzzle)
-    print(solution_a)
-
-    solution_b = solve_b(puzzle)
-    print(solution_b)
+    print(solve_a(adapters))
+    print(solve_b(adapters))
 
 
 if __name__ == '__main__':
