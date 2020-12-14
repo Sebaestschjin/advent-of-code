@@ -1,7 +1,7 @@
 import unittest
 from assertpy import assert_that
 
-import reader
+from . import reader
 
 
 class Test(unittest.TestCase):

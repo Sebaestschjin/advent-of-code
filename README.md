@@ -1,6 +1,8 @@
 My solutions to advent of code.
 
-Written in Python. Requires Python >= 3.9.1
+Written in Python. Requires Python >= 3.9
+
+[![Build Status](https://travis-ci.org/Sebaestschjin/advent-of-code.svg?branch=main)](https://travis-ci.org/Sebaestschjin/advent-of-code)
 
 # Progress
 

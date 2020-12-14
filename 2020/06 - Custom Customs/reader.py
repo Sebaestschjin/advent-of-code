@@ -1,5 +1,9 @@
+from pathlib import Path
+
+
 def read(filename='in'):
-    with open(filename, 'r') as file:
+    file_path = Path(__file__).parent / filename
+    with file_path.open('r') as file:
         return read_lines(file.readlines())
 
 

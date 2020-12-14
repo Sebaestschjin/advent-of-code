@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-import reader
+from . import reader
 
 def get_all_adapters(adapters):
     adapters.append(0)                  # the outlet

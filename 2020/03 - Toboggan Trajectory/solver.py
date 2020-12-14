@@ -1,7 +1,7 @@
 from functools import reduce
 import operator
 
-import reader
+from . import reader
 
 
 def is_tree(forest, x, y):

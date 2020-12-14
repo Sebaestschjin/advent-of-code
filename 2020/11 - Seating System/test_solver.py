@@ -1,8 +1,8 @@
 import unittest
 from assertpy import assert_that
 
-import reader
-import solver
+from . import reader
+from . import solver
 
 
 class Test(unittest.TestCase):

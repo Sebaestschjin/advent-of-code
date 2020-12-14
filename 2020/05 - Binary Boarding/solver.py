@@ -1,4 +1,4 @@
-import reader
+from . import reader
 
 
 def binary_search(down, up, splitter):

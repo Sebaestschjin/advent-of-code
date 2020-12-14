@@ -1,6 +1,6 @@
 import re
 
-import reader
+from . import reader
 
 VALIDATORS = {
     'byr': lambda v: 1920 <= int(v) <= 2002,

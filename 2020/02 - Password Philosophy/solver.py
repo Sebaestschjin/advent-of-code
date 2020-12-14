@@ -1,4 +1,4 @@
-import reader
+from . import reader
 
 
 def is_valid_a(password, letter, lower, upper):

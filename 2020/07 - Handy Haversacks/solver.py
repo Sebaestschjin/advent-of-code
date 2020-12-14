@@ -1,4 +1,4 @@
-import reader
+from . import reader
 
 
 def find_containers(rules, search_bag):

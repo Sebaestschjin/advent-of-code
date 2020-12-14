@@ -1,4 +1,4 @@
-import reader
+from . import reader
 
 
 def solve_a(puzzle):

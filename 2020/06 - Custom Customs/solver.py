@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-import reader
+from . import reader
 
 
 def get_answers_a(group):

@@ -1,7 +1,7 @@
 from collections import defaultdict
 from math import ceil, lcm
 
-import reader
+from . import reader
 
 
 def get_min_departure(min_departure, schedule):
