@@ -2,13 +2,13 @@ My solutions to advent of code.
 
 Written in Python. Requires Python >= 3.9
 
-[![Build Status](https://travis-ci.org/Sebaestschjin/advent-of-code.svg?branch=main)](https://travis-ci.org/Sebaestschjin/advent-of-code)
+[![Build Status](https://travis-ci.com/Sebaestschjin/advent-of-code.svg?branch=main)](https://travis-ci.com/Sebaestschjin/advent-of-code)
 
 # Progress
 
 | Year | Total | 01  | 02  | 03  | 04  | 05  | 06  | 07  | 08  | 09  | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21  | 22  | 23  | 24  | 25  |
 |:----:|:------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 2020 | 20/50 | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐  | ⭐   | ⭐  | ⭐   | ⭐  | ⭐
+| 2020 | 28/50 | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐  | ⭐   | ⭐  | ⭐   | ⭐  | ⭐   | ⭐
 | 2019 | 16/50 | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
 | 2018 | 12/50 | ⭐   | ⭐   | ⭐  |     | ⭐   |     | ⭐   | ⭐  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
 | 2017 | 30/50 | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ☆   |     | ⭐   | ☆   |     | ⭐  |     |     |     |     |     |     |     |
