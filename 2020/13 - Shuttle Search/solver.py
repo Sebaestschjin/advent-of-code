@@ -53,8 +53,8 @@ def solve_b(puzzle, start_at):
     schedules = list(zip(range(len(schedules)), schedules))
     schedules = [(index, schedule) for index, schedule in schedules if schedule]
 
-    while (start_at + max_index) % max_least_common != 0:
-        start_at += 1
+    diff = (start_at + max_index) % max_least_common
+    start_at += (max_least_common - diff)
 
     possible = False
     while not possible:
