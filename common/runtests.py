@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
     # Discover Tests
     loader = unittest.TestLoader()
-    tests = loader.discover('..', pattern='test_*.py')
+    tests = loader.discover('.', pattern='test_*.py')
 
     # Run tests
     testRunner = MyTestRunner(
