@@ -2,7 +2,7 @@ My solutions to advent of code.
 
 Written in Python. Requires Python >= 3.9
 
-[![Build Status](https://travis-ci.com/Sebaestschjin/advent-of-code.svg?branch=main)](https://travis-ci.com/Sebaestschjin/advent-of-code)
+![Run Python Tests](https://github.com/Sebaestschjin/advent-of-code/workflows/Run%20Python%20Tests/badge.svg)
 
 # Progress
 
