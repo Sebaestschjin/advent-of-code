@@ -1,3 +1,5 @@
+from common.gameoflife import GameOfLife, NeighborType
+
 from . import reader
 
 
@@ -9,6 +11,7 @@ class GameOfChairs:
         self.height = len(self.current)
         self.required_empty = required_empty
         self.line_of_sight = line_of_sight
+        self.rounds = 0
 
     def play(self):
         is_stale = False
@@ -76,28 +79,39 @@ class GameOfChairs:
         return len([(r, c) for r, c in self.get_neighbors(row, col) if self.is_occupied(r, c)])
 
 
-def solve_a(start):
-    game = GameOfChairs(start)
-    game.play()
+EMPTY = 'L'
+OCCUPIED = '#'
+FLOOR = '.'
 
-    total_chairs = 0
-    for row in game.current:
-        for col in row:
-            if col == '#':
-                total_chairs += 1
-    return total_chairs
+
+def occupied_cells(cells):
+    return len([_ for _, state in cells if state == OCCUPIED])
+
+
+def get_rules(required_neighbors):
+    return {
+        EMPTY: lambda neighbors: OCCUPIED if occupied_cells(neighbors) == 0 else EMPTY,
+        OCCUPIED: lambda neighbors: EMPTY if occupied_cells(neighbors) >= required_neighbors else OCCUPIED,
+        FLOOR: lambda _: FLOOR,
+    }
+
+
+def solve_a(start):
+    game = GameOfLife(start, get_rules(4))
+
+    while not game.is_stale:
+        game.play_round()
+
+    return occupied_cells(game.current_cells.items())
 
 
 def solve_b(start):
-    game = GameOfChairs(start, line_of_sight=-1, required_empty=5)
-    game.play()
+    game = GameOfLife(start, get_rules(5), neighbor_settings=(NeighborType.LINE_OF_SIGHT, [EMPTY, OCCUPIED]))
 
-    total_chairs = 0
-    for row in game.current:
-        for col in row:
-            if col == '#':
-                total_chairs += 1
-    return total_chairs
+    while not game.is_stale:
+        game.play_round()
+
+    return occupied_cells(game.current_cells.items())
 
 
 def run():

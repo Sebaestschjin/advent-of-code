@@ -8,4 +8,9 @@ def read(filename='in'):
 
 
 def read_lines(lines):
-    return [line.strip() for line in lines]
+    cells = {}
+    for y in range(len(lines)):
+        line = lines[y].strip()
+        for x in range(len(line)):
+            cells[(x, y)] = line[x]
+    return cells

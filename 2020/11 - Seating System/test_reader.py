@@ -6,11 +6,14 @@ from . import reader
 
 class Test(unittest.TestCase):
     def test_example(self):
-        lines = ['L.LL.LL.LL\n', 'LLLLLLL.LL\n', 'L.L.L..L..\n', 'LLLL.LL.LL\n', 'L.LL.LL.LL\n', 'L.LLLLL.LL\n',
-                 '..L.L.....\n', 'LLLLLLLLLL\n', 'L.LLLLLL.L\n', 'L.LLLLL.LL\n']
+        lines = ['L.LL.\n', 'LLLLL\n', 'L.L.L\n', 'LLLL.\n']
         result = reader.read_lines(lines)
-        assert_that(result).is_equal_to(['L.LL.LL.LL', 'LLLLLLL.LL', 'L.L.L..L..', 'LLLL.LL.LL', 'L.LL.LL.LL',
-                                         'L.LLLLL.LL', '..L.L.....', 'LLLLLLLLLL', 'L.LLLLLL.L', 'L.LLLLL.LL', ])
+        assert_that(result).is_equal_to({
+            (0, 0): 'L', (1, 0): '.', (2, 0): 'L', (3, 0): 'L', (4, 0): '.',
+            (0, 1): 'L', (1, 1): 'L', (2, 1): 'L', (3, 1): 'L', (4, 1): 'L',
+            (0, 2): 'L', (1, 2): '.', (2, 2): 'L', (3, 2): '.', (4, 2): 'L',
+            (0, 3): 'L', (1, 3): 'L', (2, 3): 'L', (3, 3): 'L', (4, 3): '.',
+        })
 
 
 if __name__ == '__main__':

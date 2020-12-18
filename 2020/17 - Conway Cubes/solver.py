@@ -1,57 +1,6 @@
-from itertools import product
+from common.gameoflife import GameOfLife
 
 from . import reader
-
-
-class GameOfLife:
-    def __init__(self, rules, dimensions: int = 3, default_state=None):
-        self.dimensions = dimensions
-        self.rules = rules
-        self.current_board = None
-        self.default_state = default_state
-
-    def play(self, initial_board, rounds: int):
-        self.current_board = initial_board
-        positions_to_check = self.determine_initial_positions()
-
-        for i in range(rounds):
-            next_board = self.current_board.copy()
-            next_positions = set()
-            for position in positions_to_check:
-                neighbors = self.get_neighbors(position)
-                current_state = self.get_current_state(position)
-                next_state = self.get_next_state(current_state, neighbors)
-
-                if current_state != next_state:
-                    next_board[position] = next_state
-                    next_positions.add(position)
-                    for neighbor, _ in neighbors:
-                        next_positions.add(neighbor)
-
-            positions_to_check = next_positions
-            self.current_board = next_board
-
-        return self.current_board
-
-    def determine_initial_positions(self):
-        positions = set(self.current_board.keys())
-        for position in self.current_board.keys():
-            for neighbor, _ in self.get_neighbors(position):
-                positions.add(neighbor)
-        return positions
-
-    def get_current_state(self, position):
-        return self.current_board.get(position, self.default_state)
-
-    def get_next_state(self, current_state, neighbors):
-        return self.rules[current_state](neighbors)
-
-    def get_neighbors(self, position):
-        coordinates = list(position)
-        ranges = [[coordinate - 1, coordinate, coordinate + 1] for coordinate in coordinates]
-        neighbor_positions = [neighbor_position for neighbor_position in product(*ranges)
-                              if neighbor_position != position]
-        return [(position, self.get_current_state(position)) for position in neighbor_positions]
 
 
 ACTIVE = '#'
@@ -69,14 +18,22 @@ RULES = {
 
 
 def solve_a(cube):
-    game = GameOfLife(RULES, dimensions=3, default_state=INACTIVE)
-    cube = game.play(cube, 6)
+    cube = {(x, y, 0): s for (x, y), s in cube.items()}
+
+    game = GameOfLife(cube, RULES, default_state=INACTIVE)
+    for i in range(6):
+        game.play_round()
+    cube = game.current_cells
     return len([position for position, state in cube.items() if state == ACTIVE])
 
 
 def solve_b(hypercube):
-    game = GameOfLife(RULES, dimensions=4, default_state=INACTIVE)
-    hypercube = game.play(hypercube, 6)
+    hypercube = {(x, y, 0, 0): s for (x, y), s in hypercube.items()}
+
+    game = GameOfLife(hypercube, RULES, default_state=INACTIVE)
+    for i in range(6):
+        game.play_round()
+    hypercube = game.current_cells
     return len([position for position, state in hypercube.items() if state == ACTIVE])
 
 
