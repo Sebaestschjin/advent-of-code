@@ -2,9 +2,11 @@ from enum import Enum
 from itertools import product
 
 
+# TODO needs refactoring. This transports too much different information in one value
 class NeighborType(Enum):
     MOORE = 1
     LINE_OF_SIGHT = 2
+    HEX_MOORE = 3
 
 
 class GameOfLife:
@@ -50,6 +52,8 @@ class GameOfLife:
             return self.__get_moore_neighbors(position, neighbor_value)
         elif neighbor_type == NeighborType.LINE_OF_SIGHT:
             return self.__get_line_of_sight_neighbors(position, neighbor_value)
+        elif neighbor_type == NeighborType.HEX_MOORE:
+            return self.__get_hex_neighbors(position, neighbor_value)
         else:
             raise ValueError(f'Unknown neighbor type {neighbor_type}')
 
@@ -82,6 +86,20 @@ class GameOfLife:
         directions = [direction for direction in product(*ranges) if direction != zero_direction]
         neighbors = [get_neighbors_at_direction(position, direction) for direction in directions]
         return [neighbor for directional_neighbors in neighbors for neighbor in directional_neighbors]
+
+    def __get_hex_neighbors(self, position, length):
+        if length != 1:
+            raise ValueError(f'Length unequal to 1 is currently not supported :-(')
+        if len(position) != 2:
+            raise ValueError(f'Only 2D coordinates are supported')
+        x, y = position
+        if y % 2 == 0:
+            neighbor_positions = [(x, y + 1), (x + 1, y), (x, y - 1), (x - 1, y - 1), (x - 1, y), (x - 1, y + 1)]
+        else:
+            neighbor_positions = [(x + 1, y + 1), (x + 1, y), (x + 1, y - 1), (x, y - 1), (x - 1, y), (x, y + 1)]
+        return [(position, self.get_current_state(position)) for position in neighbor_positions
+                if self.__is_position(position)]
+        pass
 
     def __is_position(self, position):
         return position in self.current_cells or self.default_state
