@@ -25,8 +25,8 @@ class CircularListTest(unittest.TestCase):
 
         assert_that(self.circular_list.is_empty()).is_false()
         assert_that(node).is_instance_of(CircularList.Node)
-        assert_that(node.next_node).is_equal_to(node)
-        assert_that(node.prev_node).is_equal_to(node)
+        assert_that(node.next_node).is_equal_to(self.circular_list.head)
+        assert_that(node.prev_node).is_equal_to(self.circular_list.tail)
 
     def test_append_two(self):
         first = self.circular_list.append(1)
@@ -36,8 +36,8 @@ class CircularListTest(unittest.TestCase):
         assert_that(first).is_instance_of(CircularList.Node)
         assert_that(second).is_instance_of(CircularList.Node)
         assert_that(first.next_node).is_equal_to(second)
-        assert_that(first.prev_node).is_equal_to(second)
-        assert_that(second.next_node).is_equal_to(first)
+        assert_that(first.prev_node).is_equal_to(self.circular_list.tail)
+        assert_that(second.next_node).is_equal_to(self.circular_list.head)
         assert_that(second.prev_node).is_equal_to(first)
 
     def test_append_three(self):
@@ -48,10 +48,10 @@ class CircularListTest(unittest.TestCase):
         assert_that(second).is_instance_of(CircularList.Node)
         assert_that(third).is_instance_of(CircularList.Node)
         assert_that(first.next_node).is_equal_to(second)
-        assert_that(first.prev_node).is_equal_to(third)
+        assert_that(first.prev_node).is_equal_to(self.circular_list.tail)
         assert_that(second.next_node).is_equal_to(third)
         assert_that(second.prev_node).is_equal_to(first)
-        assert_that(third.next_node).is_equal_to(first)
+        assert_that(third.next_node).is_equal_to(self.circular_list.head)
         assert_that(third.prev_node).is_equal_to(second)
 
     def test_pop(self):

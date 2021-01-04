@@ -54,7 +54,7 @@ class CircularList:
         return None
 
     def is_empty(self):
-        return self.head.next_node == self.tail
+        return self.tail.next_node == self.head
 
     def __append(self, node):
         old_head = self.head.prev_node
