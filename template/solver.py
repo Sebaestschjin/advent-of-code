@@ -1,4 +1,4 @@
-from . import reader
+import year2020.day01.reader as reader
 
 
 def solve_a(puzzle):

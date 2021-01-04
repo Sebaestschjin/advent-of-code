@@ -1,15 +1,9 @@
-import unittest
 from assertpy import assert_that
 
-from . import reader
+import year2020.day01.reader as reader
 
 
-class Test(unittest.TestCase):
-    def test_example(self):
-        lines = []
-        result = reader.read_lines(lines)
-        assert_that(result).is_equal_to([])
-
-
-if __name__ == '__main__':
-    unittest.main()
+def test_example(self):
+    lines = []
+    result = reader.read_lines(lines)
+    assert_that(result).is_equal_to([])
