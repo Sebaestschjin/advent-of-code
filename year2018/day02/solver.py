@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from . import reader
+import year2018.day02.reader as reader
 
 
 def get_distance(word1, word2):

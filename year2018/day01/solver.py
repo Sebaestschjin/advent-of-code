@@ -1,6 +1,6 @@
 from itertools import cycle
 
-from . import reader
+import year2018.day01.reader as reader
 
 
 def solve_a(puzzle):

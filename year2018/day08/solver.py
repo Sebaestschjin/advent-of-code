@@ -1,6 +1,6 @@
 import networkx as nx
 
-from . import reader
+import year2018.day08.reader as reader
 
 ROOT = 0
 

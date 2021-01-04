@@ -1,4 +1,4 @@
-from . import reader
+import year2018.day05.reader as reader
 
 
 def collapse(polymer):

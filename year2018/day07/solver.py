@@ -1,6 +1,6 @@
 import networkx as nx
 
-from . import reader
+import year2018.day07.reader as reader
 
 
 class Worker:

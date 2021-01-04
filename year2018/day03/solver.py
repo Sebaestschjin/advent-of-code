@@ -1,6 +1,6 @@
 import re
 
-from . import reader
+import year2018.day03.reader as reader
 
 
 class Claim:
@@ -63,7 +63,7 @@ def find_non_overlap(fabric, claims):
             for j in range(claim.left, claim.right):
                 points += fabric[i][j]
         if points == claim.size:
-            return claim.worker_id
+            return claim.id
 
     return None
 
