@@ -1,0 +1,9 @@
+from assertpy import assert_that
+
+import year{{year}}.day{{day}}.reader as reader
+
+
+def test_example():
+lines = []
+result = reader.read_lines(lines)
+assert_that(result).is_equal_to([])
