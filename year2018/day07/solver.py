@@ -1,6 +1,6 @@
 import networkx as nx
 
-import year2018.day07.reader as reader
+ADDITIONAL_INPUT_B = [5, 60]
 
 
 class Worker:
@@ -76,14 +76,3 @@ def solve_b(tasks, worker_count, time_offset):
         time += 1
 
     return time
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle, 5, 60))
-
-
-if __name__ == '__main__':
-    run()

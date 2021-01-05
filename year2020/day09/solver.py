@@ -1,4 +1,5 @@
-import year2020.day09.reader as reader
+ADDITIONAL_INPUT_A = [25]
+ADDITIONAL_INPUT_B = [25]
 
 
 def is_valid(number, part):
@@ -31,14 +32,3 @@ def solve_b(data, preamble_size):
                 return min_number + max_number
             if total > invalid_number:
                 break
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle, 25))
-    print(solve_b(puzzle, 25))
-
-
-if __name__ == '__main__':
-    run()

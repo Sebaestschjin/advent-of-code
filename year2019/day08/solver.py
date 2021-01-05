@@ -1,9 +1,10 @@
-import year2019.day08.reader as reader
+ADDITIONAL_INPUT_A = [6, 25]
+ADDITIONAL_INPUT_B = [25, 6]
 
 
-def build_layers(input, width, height):
+def build_layers(puzzle, width, height):
     image_size = width * height
-    layer_count = len(input) // (width * height)
+    layer_count = len(puzzle) // (width * height)
     layers = []
 
     for layer in range(layer_count):
@@ -11,7 +12,7 @@ def build_layers(input, width, height):
         layer = []
         for y in range(height):
             start_row = start_image + y * width
-            row = input[start_row:(start_row + width)]
+            row = puzzle[start_row:(start_row + width)]
             layer.append(row)
 
         layers.append(layer)
@@ -52,16 +53,14 @@ def build_image(layers, width, height):
     return image
 
 
-def solve_a(puzzle, dimension):
-    width, height = dimension
+def solve_a(puzzle, width, height):
     layers = build_layers(puzzle, width, height)
     layer = find_layer(layers)
 
     return count_pixels(layer, 1) * count_pixels(layer, 2)
 
 
-def solve_b(puzzle, dimension):
-    width, height = dimension
+def solve_b(puzzle, width, height):
     layers = build_layers(puzzle, width, height)
     image = build_image(layers, width, height)
 
@@ -74,14 +73,3 @@ def solve_b(puzzle, dimension):
         print()
 
     return None
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle, (6, 25)))
-    print(solve_b(puzzle, (25, 6)))
-
-
-if __name__ == '__main__':
-    run()

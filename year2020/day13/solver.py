@@ -1,7 +1,7 @@
 from collections import defaultdict
 from math import ceil, lcm
 
-import year2020.day13.reader as reader
+ADDITIONAL_INPUT_B = [100000000000000]
 
 
 def get_min_departure(min_departure, schedule):
@@ -67,14 +67,3 @@ def solve_b(puzzle, start_at):
                 break
 
     return start_at
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle, 100000000000000))
-
-
-if __name__ == '__main__':
-    run()

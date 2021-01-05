@@ -19,10 +19,13 @@ def add_python_path():
     sys.path.append(str(base_path))
 
 
-def run_solution(name, solver, input_file):
+def run_solution(name, solver, input_file, additional_input):
     print(f'----- {name} ----- ')
     start_time = time.process_time()
-    solution = solver(input_file)
+    if additional_input:
+        solution = solver(input_file, *additional_input)
+    else:
+        solution = solver(input_file)
     print(solution)
     print('%.2f seconds' % (time.process_time() - start_time))
 
@@ -43,9 +46,19 @@ def run():
         exit(1)
 
     input_file = reader.read()
-    run_solution('Part 1', solver.solve_a, input_file)
+
+    try:
+        additional_a = solver.ADDITIONAL_INPUT_A
+    except AttributeError:
+        additional_a = None
+    run_solution('Part 1', solver.solve_a, input_file, additional_a)
+
     if day != 25:
-        run_solution('Part 2', solver.solve_b, input_file)
+        try:
+            additional_b = solver.ADDITIONAL_INPUT_B
+        except AttributeError:
+            additional_b = None
+        run_solution('Part 2', solver.solve_b, input_file, additional_b)
 
 
 if __name__ == '__main__':
