@@ -1,19 +1,28 @@
-My solutions to advent of code.
-
-Written in Python. Requires Python >= 3.9
-
 ![Run Python Tests](https://github.com/Sebaestschjin/advent-of-code/workflows/Run%20Python%20Tests/badge.svg)
+
+My solutions to advent of code. Written in Python. Some newer solutions require Python 3.9+. Most other stuff should
+work with 3.6+.
 
 # Progress
 
-| Year | Total | 01  | 02  | 03  | 04  | 05  | 06  | 07  | 08  | 09  | 10  | 11  | 12  | 13  | 14  | 15  | 16  | 17  | 18  | 19  | 20  | 21  | 22  | 23  | 24  | 25  |
-|:----:|:------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 2020 | 50/50 | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐ | ⭐  | ⭐  | ⭐  | ⭐ |
-| 2019 | 16/50 | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  | ⭐ | ⭐  | ⭐  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-| 2018 | 12/50 | ⭐   | ⭐   | ⭐  |     | ⭐   |     | ⭐   | ⭐  |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-| 2017 | 30/50 | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ⭐   | ⭐   | ⭐  | ☆   |     | ⭐   | ☆   |     | ⭐  |     |     |     |     |     |     |     |
-| 2016 | 00/50 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-| 2015 | 00/50 |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
+Total: 108/300
 
-☆ = first solution
-⭐ = both solutions
+# Goals
+
+* use test-driven development
+* write readable and clone code
+* try to reuse code
+* complete all challenges
+
+# Usage
+
+## Create files for a new day
+
+Run the script `scripts/create.py` with the year and day as parameters. This will create a new directory for this day
+and copy all files from the `template` directory. Template files (ending with `.mustache`) wil be rendered and then
+saved. The input file will be automatically loaded and written to the file `in`. This requires that the AOC
+Session-Token is available on the system (more information on [https://pypi.org/project/advent-of-code-data/]).
+
+## Run the solution for a given day
+
+Run the script `scripts/run.py` with the year and day as parameters.
