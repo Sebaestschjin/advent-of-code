@@ -1,11 +1,9 @@
-from pathlib import Path
+from common.reader import read_multi
 
 
 def read(filename='in'):
-    file_path = Path(__file__).parent / filename
-    with file_path.open('r') as file:
-        return read_lines(file.readlines())
+    return read_multi(__file__, filename, mapper=map_line)
 
 
-def read_lines(lines):
-    return [(line[0], int(line[1:])) for line in lines]
+def map_line(line):
+    return line[0], int(line[1:])

@@ -9,7 +9,7 @@ import year2017.day15.solver as solver
 def test_example_a():
     puzzle = [('A', 65), ('B', 8921)]
     result = solver.solve_a(puzzle)
-    assert_that(result).is_equal_to(24)
+    assert_that(result).is_equal_to(588)
 
 
 @pytest.mark.slow
@@ -21,7 +21,7 @@ def test_solution_a():
 
 @pytest.mark.slow
 def test_example_b():
-    puzzle = [('B', 65), ('A', 8921)]
+    puzzle = [('A', 65), ('B', 8921)]
     result = solver.solve_b(puzzle)
     assert_that(result).is_equal_to(309)
 

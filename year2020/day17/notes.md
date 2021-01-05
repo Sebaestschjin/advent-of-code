@@ -1,1 +1,0 @@
-Name: Conway Cubes

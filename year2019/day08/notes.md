@@ -1,1 +1,0 @@
-Name: Space Image Format

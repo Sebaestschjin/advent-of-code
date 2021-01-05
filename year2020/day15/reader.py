@@ -1,11 +1,5 @@
-from pathlib import Path
+from common.reader import read_single
 
 
 def read(filename='in'):
-    file_path = Path(__file__).parent / filename
-    with file_path.open('r') as file:
-        return read_lines(file.readlines())
-
-
-def read_lines(lines):
-    return [int(line) for line in lines[0].split(',')]
+    return read_single(__file__, filename, splitter=',', mapper=int)
