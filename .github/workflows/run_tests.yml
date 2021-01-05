@@ -17,4 +17,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Execute tests
-        run: pytest common/ -v && pytest year2020/ -v && pytest year2019/ -v && pytest year2018/ -v
+        run: pytest -v
