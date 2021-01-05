@@ -1,5 +1,3 @@
-import year2020.day01.reader as reader
-
 DIRECTIONS = {
     'n': (0, 1, -1),
     'ne': (1, 0, -1),
@@ -37,14 +35,3 @@ def solve_a(directions):
 def solve_b(directions):
     _, max_dist = follow(directions, (0, 0, 0))
     return max_dist
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

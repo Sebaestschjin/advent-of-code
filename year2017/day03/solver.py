@@ -1,7 +1,5 @@
 from itertools import product
 
-import year2017.day03.reader as reader
-
 
 def get_distance(p1, p2):
     x1, y1 = p1
@@ -94,14 +92,3 @@ def solve_b(puzzle):
     graph = {}
     coord = fill_graph(graph, puzzle)
     return coord
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,7 +1,5 @@
 import networkx as nx
 
-import year2017.day12.reader as reader
-
 
 def find_nodes(graph, visited, node):
     if node in visited:
@@ -48,14 +46,3 @@ def solve_a(puzzle):
 def solve_b(puzzle):
     graph = build_graph(puzzle)
     return find_components(graph)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

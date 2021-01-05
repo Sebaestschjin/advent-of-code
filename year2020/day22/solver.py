@@ -1,5 +1,3 @@
-import year2020.day22.reader as reader
-
 TOTAL_GAMES = 0
 
 
@@ -92,14 +90,3 @@ def solve_b(decks):
 def reset_games():
     global TOTAL_GAMES
     TOTAL_GAMES = 0
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

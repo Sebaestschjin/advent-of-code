@@ -1,6 +1,3 @@
-import year2020.day12.reader as reader
-
-
 class Navigation:
     DIRECTIONS = {
         'N': (0, 1),
@@ -102,14 +99,3 @@ def solve_b(instructions):
     final_position = navigation.run()
     dist_x, dist_y = get_distance((0, 0), final_position)
     return dist_x + dist_y
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

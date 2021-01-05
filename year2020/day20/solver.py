@@ -4,7 +4,6 @@ import re
 
 from common.grid import Direction, Grid
 
-import year2020.day20.reader as reader
 from year2020.day20.typing import Tile, Tiles
 
 
@@ -201,14 +200,3 @@ def solve_b(tiles):
     for row in real_image:
         count += len([x for x in row if x == '#'])
     return count
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

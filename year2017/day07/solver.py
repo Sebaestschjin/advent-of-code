@@ -1,7 +1,5 @@
 import networkx as nx
 
-import year2017.day07.reader as reader
-
 
 def build_graph(puzzle):
     graph = nx.DiGraph()
@@ -61,14 +59,3 @@ def solve_b(puzzle):
     root = get_root(graph)
     fill_loads(graph, root)
     return find_inbalance(graph, root, 0)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,8 +1,6 @@
 from collections import defaultdict
 from functools import reduce
 
-import year2020.day21.reader as reader
-
 
 def get_foods_per_allergen(foods):
     food_per_allergen = defaultdict(list)
@@ -62,14 +60,3 @@ def solve_a(foods):
 def solve_b(foods):
     allergic_ingredients = get_allergic_ingredients(foods)
     return ','.join(dict(sorted(allergic_ingredients.items(), key=lambda i: i[1])).keys())
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

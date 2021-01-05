@@ -1,6 +1,3 @@
-import year2020.day01.reader as reader
-
-
 def allocate_a(memory):
     seen = []
     steps = 0
@@ -48,14 +45,3 @@ def solve_a(puzzle):
 
 def solve_b(puzzle):
     return allocate_b(puzzle)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

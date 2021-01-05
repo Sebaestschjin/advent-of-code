@@ -1,6 +1,3 @@
-import year2018.day05.reader as reader
-
-
 def collapse(polymer):
     chars = polymer.copy()
 
@@ -39,14 +36,3 @@ def solve_b(puzzle):
             cur_min = size
 
     return cur_min
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

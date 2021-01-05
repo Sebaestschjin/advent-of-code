@@ -1,8 +1,6 @@
 from collections import deque
 from functools import reduce
 
-import year2017.day10.reader as reader
-
 size = 256
 rounds = 64
 chunk_size = 16
@@ -52,14 +50,3 @@ def solve_b(puzzle):
         sparse, cur, skip = hash_len(sparse, length, cur, skip)
 
     return to_hex(get_dense(sparse))
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

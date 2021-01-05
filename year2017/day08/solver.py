@@ -1,7 +1,5 @@
 import re
 
-import year2017.day08.reader as reader
-
 
 def is_int(string):
     if string == '':
@@ -123,14 +121,3 @@ def solve_a(puzzle):
 
 def solve_b(puzzle):
     return run_program(puzzle)[1]
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

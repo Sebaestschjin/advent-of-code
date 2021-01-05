@@ -1,6 +1,3 @@
-import year2020.day05.reader as reader
-
-
 def binary_search(down, up, splitter):
     half = (up + down + 1) / 2
     if splitter[0] == 'F' or splitter[0] == 'L':
@@ -37,14 +34,3 @@ def solve_b(boarding_passes):
         seat_id = get_seat_id(missing_seat)
         if seat_id + 1 in seat_ids and seat_id - 1 in seat_ids:
             return seat_id
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,6 +1,3 @@
-import year2020.day07.reader as reader
-
-
 def find_containers(rules, search_bag):
     containers = []
     for bag, rule in rules.items():
@@ -27,14 +24,3 @@ def find_contents(rules, search_bag):
 
 def solve_b(rules):
     return find_contents(rules, 'shiny gold') - 1
-
-
-def run():
-    rules = reader.read()
-
-    print(solve_a(rules))
-    print(solve_b(rules))
-
-
-if __name__ == '__main__':
-    run()

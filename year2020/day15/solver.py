@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-import year2020.day15.reader as reader
-
 
 def solve_for_target(starting, target):
     before_last_positions = defaultdict(int)
@@ -32,14 +30,3 @@ def solve_a(starting):
 
 def solve_b(starting):
     return solve_for_target(starting, 30000000)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

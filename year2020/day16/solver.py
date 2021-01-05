@@ -1,7 +1,5 @@
 from functools import reduce
 
-import year2020.day16.reader as reader
-
 
 def is_field_valid(field, rule):
     _, ((lower_1, upper_1), (lower_2, upper_2)) = rule
@@ -61,14 +59,3 @@ def solve_b(rules, tickets):
     departure_fields = [tickets[0][index] for name, index in valid_combination if name.startswith('departure')]
 
     return reduce(lambda x, y: x * y, departure_fields)
-
-
-def run():
-    rules, tickets = reader.read()
-
-    print(solve_a(rules, tickets))
-    print(solve_b(rules, tickets))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,6 +1,3 @@
-import year2017.day13.reader as reader
-
-
 class Scanner:
     def __init__(self, depth):
         self.depth = depth
@@ -61,14 +58,3 @@ def solve_a(puzzle):
 
 def solve_b(puzzle):
     pass
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

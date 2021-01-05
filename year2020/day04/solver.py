@@ -1,7 +1,5 @@
 import re
 
-import year2020.day04.reader as reader
-
 VALIDATORS = {
     'byr': lambda v: 1920 <= int(v) <= 2002,
     'iyr': lambda v: 2010 <= int(v) <= 2020,
@@ -36,14 +34,3 @@ def solve_a(passports):
 def solve_b(passports):
     valid_passports = [p for p in passports if is_valid_b(p)]
     return len(valid_passports)
-
-
-def run():
-    passports = reader.read()
-
-    print(solve_a(passports))
-    print(solve_b(passports))
-
-
-if __name__ == '__main__':
-    run()

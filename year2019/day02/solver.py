@@ -1,4 +1,3 @@
-import year2019.day02.reader as reader
 import year2019.day02.intcode as intcode
 
 
@@ -19,14 +18,3 @@ def solve_b(puzzle):
             result = intcode.run_program(puzzle)
             if result[0] == 19690720:
                 return noun * 100 + verb
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

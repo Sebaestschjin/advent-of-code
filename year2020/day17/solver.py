@@ -1,8 +1,5 @@
 from common.gameoflife import GameOfLife
 
-import year2020.day17.reader as reader
-
-
 ACTIVE = '#'
 INACTIVE = '.'
 
@@ -35,14 +32,3 @@ def solve_b(hypercube):
         game.play_round()
     hypercube = game.current_cells
     return len([position for position, state in hypercube.items() if state == ACTIVE])
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

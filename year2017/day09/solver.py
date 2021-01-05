@@ -1,6 +1,3 @@
-import year2017.day09.reader as reader
-
-
 def solve_a(puzzle):
     in_garbage = False
     ignore_next = False
@@ -56,14 +53,3 @@ def solve_b(puzzle):
             level = level - 1
             continue
     return score
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

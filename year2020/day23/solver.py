@@ -2,8 +2,6 @@ import logging
 
 from common.my_collections import CircularList
 
-import year2020.day23.reader as reader
-
 
 class Game:
     def __init__(self, initial, additional_cups=0):
@@ -82,14 +80,3 @@ def solve_b(cups):
     after_next_cup = cups.get_next(next_cup)
 
     return next_cup.value * after_next_cup.value
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

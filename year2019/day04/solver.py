@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-import year2019.day04.reader as reader
-
 
 def is_valid(password, condition):
     last_value = None
@@ -30,14 +28,3 @@ def solve_b(puzzle):
 
     return len([password for password in range(lower, upper)
                 if is_valid(password, lambda c: c == 2)])
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

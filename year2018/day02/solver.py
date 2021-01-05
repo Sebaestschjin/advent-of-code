@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-import year2018.day02.reader as reader
-
 
 def get_distance(word1, word2):
     distance = 0
@@ -54,14 +52,3 @@ def solve_b(box_ids):
             word2 = box_ids[j]
             if get_distance(word1, word2) == 1:
                 return remove_uncommon(word1, word2)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

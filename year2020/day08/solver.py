@@ -1,6 +1,3 @@
-import year2020.day08.reader as reader
-
-
 class State:
     def __init__(self):
         self.accumulator = 0
@@ -64,14 +61,3 @@ def solve_b(program):
             result = run_program(new_program)
             if not result.loop_detected:
                 return result.accumulator
-
-
-def run():
-    program = reader.read()
-
-    print(solve_a(program))
-    print(solve_b(program))
-
-
-if __name__ == '__main__':
-    run()

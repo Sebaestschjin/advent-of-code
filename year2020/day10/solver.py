@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-import year2020.day10.reader as reader
-
 
 def get_all_adapters(adapters):
     adapters.append(0)  # the outlet
@@ -14,7 +12,7 @@ def solve_a(adapters):
 
     differences = defaultdict(int)
     for i in range(len(adapters) - 1):
-        difference = adapters[i+1] - adapters[i]
+        difference = adapters[i + 1] - adapters[i]
         differences[difference] += 1
 
     return differences[1] * differences[3]
@@ -44,14 +42,3 @@ def solve_b(adapters):
     adapters = get_all_adapters(adapters)
 
     return get_connection_count(0, adapters, {})
-
-
-def run():
-    adapters = reader.read()
-
-    print(solve_a(adapters))
-    print(solve_b(adapters))
-
-
-if __name__ == '__main__':
-    run()

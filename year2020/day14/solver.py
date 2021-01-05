@@ -1,7 +1,5 @@
 from collections import defaultdict
 
-import year2020.day14.reader as reader
-
 
 def to_binary(value):
     return [char for char in f'{value:036b}']
@@ -78,14 +76,3 @@ def solve_b(commands):
                 memory[address] = value
 
     return get_total_memory(memory)
-
-
-def run():
-    commands = reader.read()
-
-    print(solve_a(commands))
-    print(solve_b(commands))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,8 +1,6 @@
 # TODO use own graph lib
 import networkx as nx
 
-import year2019.day06.reader as reader
-
 
 def calculate_distance_a(solar, node, distance):
     solar.nodes[node]['orbits'] = distance
@@ -40,14 +38,3 @@ def solve_b(puzzle):
     calculate_distance_b(solar, 'YOU', [], 0)
 
     return solar.nodes['SAN']['orbits'] - 2
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

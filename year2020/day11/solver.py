@@ -1,7 +1,5 @@
 from common.gameoflife import GameOfLife, NeighborType
 
-import year2020.day11.reader as reader
-
 
 class GameOfChairs:
     def __init__(self, start, line_of_sight=1, required_empty=4):
@@ -112,14 +110,3 @@ def solve_b(start):
         game.play_round()
 
     return occupied_cells(game.current_cells.items())
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,7 +1,5 @@
 import re
 
-import year2018.day03.reader as reader
-
 
 class Claim:
 
@@ -82,14 +80,3 @@ def solve_b(puzzle):
     fabric = place_claims(claims)
 
     return find_non_overlap(fabric, claims)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -1,8 +1,6 @@
 # TODO cleanup
 from collections import defaultdict
 
-import year2019.day03.reader as reader
-
 
 def update_coordinates_a(line, grid, id):
     x, y = 0, 0
@@ -63,14 +61,3 @@ def solve_b(puzzle):
     crossings = [c for _, c in grid.items() if len(c) > 1]
 
     return min([sum(c.values()) for c in crossings])
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

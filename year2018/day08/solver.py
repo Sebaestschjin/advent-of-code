@@ -1,7 +1,5 @@
 import networkx as nx
 
-import year2018.day08.reader as reader
-
 ROOT = 0
 
 
@@ -95,14 +93,3 @@ def solve_b(puzzle):
         read_node(puzzle, state, graph, ROOT)
 
     return get_meta(graph, ROOT)
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

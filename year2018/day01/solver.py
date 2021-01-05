@@ -1,7 +1,5 @@
 from itertools import cycle
 
-import year2018.day01.reader as reader
-
 
 def solve_a(puzzle):
     return sum(puzzle)
@@ -16,14 +14,3 @@ def solve_b(puzzle):
         if frequency in found:
             return frequency
         found[frequency] = True
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

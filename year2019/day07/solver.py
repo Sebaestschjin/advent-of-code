@@ -1,6 +1,5 @@
 import itertools
 
-import year2019.day07.reader as reader
 import year2019.day07.intcode as intcode
 
 AMP_COUNT = 5
@@ -61,14 +60,3 @@ def solve_b(puzzle):
             max_value = phase_value
 
     return max_value
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()

@@ -3,8 +3,6 @@ from collections import defaultdict
 from common.gameoflife import GameOfLife, NeighborType
 from common.coordinate import Direction
 
-import year2020.day24.reader as reader
-
 WHITE = 1
 BLACK = 2
 
@@ -64,14 +62,3 @@ def solve_b(renovation):
         game.play_round()
 
     return black_tiles(game.current_cells.items())
-
-
-def run():
-    puzzle = reader.read()
-
-    print(solve_a(puzzle))
-    print(solve_b(puzzle))
-
-
-if __name__ == '__main__':
-    run()
