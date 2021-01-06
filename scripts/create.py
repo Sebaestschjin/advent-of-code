@@ -20,10 +20,11 @@ def parse_args():
 def run():
     args = parse_args()
     year = args.year
-    day = str(args.day).zfill(2)
+    day = args.day
+    filled_day = str(day).zfill(2)
 
     base_path = Path(__file__).parent.parent
-    solution_path = base_path / f'year{year}' / f'day{day}'
+    solution_path = base_path / f'year{year}' / f'day{filled_day}'
     os.makedirs(str(solution_path), exist_ok=True)
 
     for file in (base_path / 'template').iterdir():
@@ -37,7 +38,7 @@ def run():
             in_file.write_text(puzzle.input_data)
         elif file.suffix == '.mustache':
             with open(file, 'r') as template:
-                rendered_content = chevron.render(template, {'year': year, 'day': day})
+                rendered_content = chevron.render(template, {'year': year, 'day': filled_day})
 
             copied_file = Path(solution_path) / file.name.replace('.mustache', '.py')
             copied_file.write_text(rendered_content)
