@@ -7,8 +7,8 @@
 | 01 - Not Quite Lisp                         |  ⭐  |  ⭐ |   ●○○○○   |
 | 02 - I Was Told There Would Be No Math      |  ⭐  |  ⭐ |   ●○○○○   |
 | 03 - Perfectly Spherical Houses in a Vacuum |  ⭐  |  ⭐ |   ●○○○○   |
-| 04 - The Ideal Stocking Stuffer             |  ⭐  |  ⭐ |   ●○○○○   | uses slow brute force algorithm for part 2
-| 05  |    |   |
+| 04 - The Ideal Stocking Stuffer             |  ⭐  |  ⭐ |   ●○○○○   | uses slow brute force algorithm
+| 05 - Doesn't He Have Intern-Elves For This? |  ⭐  |  ⭐ |   ●○○○○   |
 | 06  |    |   |
 | 07  |    |   |
 | 08  |    |   |
