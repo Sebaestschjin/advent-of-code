@@ -20,10 +20,10 @@ def parse_args():
 def run():
     args = parse_args()
     year = args.year
-    day = args.day
+    day = str(args.day).zfill(2)
 
     base_path = Path(__file__).parent.parent
-    solution_path = base_path / f'year{year}' / f'day{str(day).zfill(2)}'
+    solution_path = base_path / f'year{year}' / f'day{day}'
     os.makedirs(str(solution_path), exist_ok=True)
 
     for file in (base_path / 'template').iterdir():
