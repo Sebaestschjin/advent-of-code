@@ -1,13 +1,13 @@
 # Progress
 
-**Total**: 06/50
+**Total**: 08/50
 
-| Day                                         |  1  |  2  | Difficulty |
-|---------------------------------------------|:---:|:---:|:----------:|
+| Day                                         |  1  |  2  | Difficulty | Notes
+|---------------------------------------------|:---:|:---:|:----------:|-----------------------------
 | 01 - Not Quite Lisp                         |  ⭐  |  ⭐ |   ●○○○○   |
 | 02 - I Was Told There Would Be No Math      |  ⭐  |  ⭐ |   ●○○○○   |
 | 03 - Perfectly Spherical Houses in a Vacuum |  ⭐  |  ⭐ |   ●○○○○   |
-| 04  |    |   |
+| 04 - The Ideal Stocking Stuffer             |  ⭐  |  ⭐ |   ●○○○○   | uses slow brute force algorithm for part 2
 | 05  |    |   |
 | 06  |    |   |
 | 07  |    |   |

@@ -7,7 +7,7 @@ import year{{year}}.day{{day}}.solver as solver
 
 @pytest.mark.parametrize('puzzle, expected',
                          [])
-def test_examples_a():
+def test_examples_a(puzzle, expected):
     result = solver.solve_a(puzzle)
     assert_that(result).is_equal_to(expected)
 
