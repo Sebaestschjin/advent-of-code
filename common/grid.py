@@ -89,7 +89,7 @@ class Position:
         return False
 
     def __hash__(self):
-        return (self.x, self.y).__hash__()
+        return hash((self.x, self.y))
 
     def __lt__(self, other):
         if isinstance(other, Position):

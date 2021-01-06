@@ -1,12 +1,12 @@
 # Progress
 
-Total: 02/50
+**Total**: 06/50
 
-| Day                                    |  1  |  2  | Difficulty |
-|----------------------------------------|:---:|:---:|------------|
-| 01 - Not Quite Lisp                    |  ⭐  |  ⭐ | ●○○○○     |
-| 02 - I Was Told There Would Be No Math |  ⭐  |  ⭐ | ●○○○○     |
-| 03  |    |   |
+| Day                                         |  1  |  2  | Difficulty |
+|---------------------------------------------|:---:|:---:|:----------:|
+| 01 - Not Quite Lisp                         |  ⭐  |  ⭐ |   ●○○○○   |
+| 02 - I Was Told There Would Be No Math      |  ⭐  |  ⭐ |   ●○○○○   |
+| 03 - Perfectly Spherical Houses in a Vacuum |  ⭐  |  ⭐ |   ●○○○○   |
 | 04  |    |   |
 | 05  |    |   |
 | 06  |    |   |
