@@ -5,7 +5,15 @@ work with 3.6+.
 
 # Progress
 
-Total: 116/300
+| Year | Stars |
+| --- | --- | 
+| 2021 | [![2021](https://img.shields.io/badge/stars%20⭐-2-yellow)](https://adventofcode.com/2021/stats) |
+| 2020 | [![2020](https://img.shields.io/badge/stars%20⭐-50-yellow)](https://adventofcode.com/2021/stats) |
+| 2019 | [![2019](https://img.shields.io/badge/stars%20⭐-16-yellow)](https://adventofcode.com/2021/stats) |
+| 2018 | [![2018](https://img.shields.io/badge/stars%20⭐-12-yellow)](https://adventofcode.com/2021/stats) |
+| 2017 | [![2017](https://img.shields.io/badge/stars%20⭐-30-yellow)](https://adventofcode.com/2021/stats) |
+| 2016 | [![2016](https://img.shields.io/badge/stars%20⭐-0-yellow)](https://adventofcode.com/2021/stats) |
+| 2015 | [![2015](https://img.shields.io/badge/stars%20⭐-10-yellow)](https://adventofcode.com/2021/stats) |
 
 # Goals
 
