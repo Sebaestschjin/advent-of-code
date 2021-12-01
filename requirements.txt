@@ -1,3 +1,5 @@
 assertpy
 pytest
 networkx
+advent-of-code-data
+chevron

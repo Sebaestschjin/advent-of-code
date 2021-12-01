@@ -10,7 +10,7 @@ Total: 116/300
 # Goals
 
 * use test-driven development
-* write readable and clone code
+* write readable and clean code
 * try to reuse code
 * complete all challenges
 
