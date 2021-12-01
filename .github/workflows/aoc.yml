@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: joblo2213/aoc-badges-action@v3
+      - uses: joblo2213/aoc-badges-action@v2
         with:
           userid: 235570
           session: ${{secrets.aoc_session}}
