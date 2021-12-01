@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "**.py"
 jobs:
   build:
     runs-on: ubuntu-latest
